@@ -1,8 +1,32 @@
 # DSA-DP
 
-### 1. Matrix chain Multiplication
+### 1. Matrix chain Multiplication (MCM)
 
-Matrix chain multiplication 
+MCM general format is 
+
+```java
+int solve(int[] arr, int i, int j){
+  
+  if (i>=j)
+    return 0;
+   
+  int ans= Integer.MAX_VALUE:
+  
+  for( int k =i; k <=j-1; k++){
+    
+    int tempAns = sovle(arr,i,k)
+                  + sovle(arr,k+1,j)
+                  +arr[i-1] * arr[k] * arr[j];
+    
+    ans = Math.min(asn,tempAns);
+  } 
+   
+   return ans;
+}
+``` 
+
+
+
 
 #### 1.1 MCM
 
