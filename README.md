@@ -156,6 +156,8 @@ Example :
     
 https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1
 
+#### Recursive Solution - P02
+
 ```java
 class Solution{
     static int palindromicPartition(String str)
@@ -201,9 +203,13 @@ class Solution{
         }
         return true;
     }
+
 }
 ```
-    
+
+#### Memoization Solution - P02
+
+<img width="729" alt="Screenshot 2022-08-10 at 5 00 15 PM" src="https://user-images.githubusercontent.com/13814143/183891088-d1e0380b-df1b-4bea-8ea9-cddaf35a2959.png">
 
 
 ## 1. Kanpsack problem
