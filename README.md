@@ -25,11 +25,37 @@ int solve(int[] arr, int i, int j){
 }
 ``` 
 
-
-
-
 #### 1.1 MCM
 
+```java
+class Solution{
+    
+    static int matrixMultiplication(int N, int arr[])
+    {
+        return solve(arr,1,N-1);
+    }
+    
+    static int solve(int[] arr, int i, int j){
+        
+         int ans = Integer.MAX_VALUE;
+         
+         if(i>=j)
+            return 0;
+        
+         for(int k=i; k<j; k++){
+             
+            int tempAns =  solve(arr, i, k)
+                            +solve(arr,k+1, j)
+                            +arr[i-1]*arr[k]*arr[j];
+                            
+            ans =Math.min(tempAns,ans);
+        }
+        
+        return ans;
+    }
+
+}
+```
 
 
 
