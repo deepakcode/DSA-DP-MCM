@@ -142,6 +142,23 @@ class Solution{
 }
 ```
 
+### P02 Palindromic Partitioning - MCM  
+Find minimum number of partition required to make string a Palindromic
+
+Example :
+    Input: str = "nitin"
+    Output: 0
+    Explaination: String is alreay palindromic.
+
+
+    Input: str = "ababbbabbababa"
+    Output: 3
+    Explaination: After 3 partitioning substrings are "a", "babbbab", "b", "ababa".
+    
+https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1
+    
+
+
 ## 1. Kanpsack problem
   ### 1.1 0/1 Knapsack (6)
   ### 1.2 Unbounded Knapsack (5)
