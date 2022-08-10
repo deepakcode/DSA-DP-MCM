@@ -4,9 +4,18 @@
 
 MCM general format is 
 
+
 <p>
-<img width="654" alt="Screenshot 2022-08-10 at 11 59 13 AM" src="https://user-images.githubusercontent.com/13814143/183841346-4ba9c2c7-0a52-4aaa-8e1b-b4228440ec18.png">
+<img width="400" alt="Screenshot 2022-08-10 at 11 59 13 AM" src="https://user-images.githubusercontent.com/13814143/183841346-4ba9c2c7-0a52-4aaa-8e1b-b4228440ec18.png">
 </p>
+
+
+ *  step 1 : Find i and j
+ *  step 2 : Find Base Condition
+ *  step 3 : Find k loop 
+ *  step 4 : Calculate tempAns
+ *  step 5 : Calculate ans
+
 
 <p>
 <img width="654" alt="Screenshot 2022-08-10 at 11 59 13 AM" src="https://user-images.githubusercontent.com/13814143/183833129-d080e4a5-7b64-4830-91db-cf3dca26a3d8.png">
