@@ -268,9 +268,9 @@ step 2 : Base Condition
         }
     }
 
-step 3 : find k loop
+step 3 : find k loop // k = i+1 and k<=j-1 and k = k+2;
 
-    for(int k=i+1; k<j-1; k=k+2){
+    for(int k=i+1; k<=j-1; k=k+2){
 
     }
 
@@ -290,7 +290,7 @@ step 4 :
     int rightFalse = solve(exp, j, k+1, isTrue); // F
 
 
-    if k =='&'
+    if exp.charAt(k) =='&'
 
         if(isTrue)
             ans = ans + leftTrue * rightTrue;
@@ -300,7 +300,7 @@ step 4 :
                      + leftTrue * rightFalse;
 
 
-    else if k=='|'
+    else if  exp.charAt(k) =='|'
 
         if(isTrue)
             ans = ans + leftTrue * rightTrue
@@ -310,7 +310,7 @@ step 4 :
             ans = ans + leftFalse * rightFalse;
 
 
-    else if k=='^'
+    else if exp.charAt(k) =='^'
 
         if(isTrue)
             ans = ans leftFalse * rightTrue
@@ -320,7 +320,63 @@ step 4 :
                       + leftTrue * rightTrue;
 
 ```java
-write code here...
+class Solution{
+    static int countWays(int N, String S){
+        return solve(S,0,N-1,true);
+    }
+    
+    static int solve(String exp, int i, int j, boolean isTrue){
+        
+        if(i>j)
+            return 0;
+            
+        if(i==j){
+            if(isTrue){
+                 return (exp.charAt(i)=='T') ? 1 : 0;
+            }else {
+                 return (exp.charAt(i)=='F') ? 1 : 0;
+            }
+        }
+        int tempAns=0;
+        
+        for(int k=i+1; k<=j-1; k=k+2){ // Remember k = i+1; and k<=j-1
+            
+            int leftT = solve(exp,i,k-1,true);
+            int leftF = solve(exp,i,k-1,false);
+            int rightT = solve(exp,k+1,j,true);
+            int rightF = solve(exp,k+1,j,false);
+            
+            if(exp.charAt(k)=='&'){
+                if(isTrue){
+                    tempAns = tempAns + leftT *rightT;
+                }else {
+                    tempAns = tempAns + leftT *rightF
+                                    + leftF *rightF
+                                    + leftF *rightT;
+                }                  
+                
+            }else if(exp.charAt(k)=='|'){
+                if(isTrue){
+                    tempAns = tempAns + leftT *rightT
+                                        + leftT *rightF
+                                          + leftF *rightT;
+                }else {
+                    tempAns = tempAns + leftF *rightF;
+                }  
+            } if(exp.charAt(k)=='^'){
+                if(isTrue){
+                    tempAns = tempAns
+                                        + leftT *rightF
+                                          + leftF *rightT;
+                }else {
+                    tempAns = tempAns + leftF *rightF 
+                                    + leftT *rightT;
+                } 
+            }
+        }
+        return tempAns;
+    }
+}
 ```
 
 
