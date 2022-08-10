@@ -235,8 +235,89 @@ https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
 
 #### Recursive Solution - P03
 
-<img width="285" alt="Screenshot 2022-08-11 at 12 48 47 AM" src="https://user-images.githubusercontent.com/13814143/184004768-2e1e3ccb-0d24-4691-ba3f-4626b397cca8.png">
+<img width="285" alt="184004768-2e1e3ccb-0d24-4691-ba3f-4626b397cca8" src="https://user-images.githubusercontent.com/13814143/184016684-477867bd-092b-4463-9224-fe2d99398d2b.png">
 
+
+- From above it isclear that 'K' will start from 'i+1' and ends at 'j-1'
+
+- 'i' and 'j' will never be at k, because K will always be at 'Operator' and i and j at 'Symbols'
+
+
+step 1 : find i and j values
+
+    i=0
+    j=n-1;
+
+step 2 : Base Condition
+
+    if(i>j)
+        return 0;
+
+    if(i==j){
+
+        if(isTrue){
+            if(exp[i]==true)
+                return 1;
+            else
+                return 0;
+        }else{
+            if(exp[i]==false)
+                return 1;
+            else
+                return 0;
+        }
+    }
+
+step 3 : find k loop
+
+    for(int k=i+1; k<j-1; k=k+2){
+
+    }
+
+step 4 :
+
+<img width="285" alt="Screenshot 2022-08-11 at 12 48 47 AM" src="https://user-images.githubusercontent.com/13814143/184016742-9ab3adb7-1627-485d-bf3c-2e99b702a8eb.png">
+
+
+    If we divide the exp at K then i to k-1 is left part and k+1 to j is right part.
+    Left can be true or false , Right can also be true or false
+
+
+    int leftTrue = solve(exp, i, k-1, isTrue);  // T
+    int leftFalse = solve(exp, i, k-1, isTrue); // F
+
+    int rightTrue = solve(exp, j, k+1, isTrue);  // T
+    int rightFalse = solve(exp, j, k+1, isTrue); // F
+
+
+    if k =='&'
+
+        if(isTrue)
+            ans = ans + leftTrue * rightTrue;
+        else
+            ans= ans + leftFalse * rightFalse
+                     + leftFalse * rightTrue
+                     + leftTrue * rightFalse;
+
+
+    else if k=='|'
+
+        if(isTrue)
+            ans = ans + leftTrue * rightTrue
+                      + leftFalse * rightTrue
+                      + leftTrue * rightFalse;
+        else
+            ans = ans + leftFalse * rightFalse;
+
+
+    else if k=='^'
+
+        if(isTrue)
+            ans = ans leftFalse * rightTrue
+                      + leftTrue * rightFalse;
+        else
+            ans = ans + leftFalse * rightFalse
+                      + leftTrue * rightTrue;
 
 ```java
 write code here...
