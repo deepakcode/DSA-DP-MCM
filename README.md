@@ -221,6 +221,19 @@ class Solution{
 
 https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
 
+```java
+        Symbols = "TTFT";
+        Operators = "|&^";
+              or
+         
+        input - Expression =  T|T&F^T
+ 
+        output -  // There are 4 ways to evaluate this experession to True
+        
+        // ((T|T)&(F^T)), (T|(T&(F^T))), (((T|T)&F)^T) and
+        // (T|((T&F)^T))
+```
+
 #### Recursive Solution - P03
 
 ```java
