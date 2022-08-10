@@ -155,6 +155,54 @@ Example :
     Explaination: After 3 partitioning substrings are "a", "babbbab", "b", "ababa".
     
 https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1
+
+```java
+class Solution{
+    static int palindromicPartition(String str)
+    {
+        //1. is string alreay palindrome
+        //2. if string alreay palindrome return 0
+        //3. for each palindrome partition - add +1
+    
+        int i = 0;
+        int j = str.length()-1;
+        
+        if(isPalindrom(str,i,j))
+            return 0;
+        return solvePP(str,i,j);
+    }
+    
+    static int solvePP(String str, int i, int j){
+        if(i>=j)
+            return 0;
+            
+        if(isPalindrom(str,i,j))
+            return 0;// Remember this - if string is pallindrom return 0
+        
+        int min = Integer.MAX_VALUE;
+         
+        for(int k=i; k<j; k++){
+            int temp = 1 
+                    + solvePP(str,i,k) 
+                    + solvePP(str,k+1,j); // 1 for each partition
+                    
+            min = Math.min(temp, min);
+        }
+        
+        return min;
+    }
+    
+    static boolean isPalindrom(String str, int i, int j){
+        while(i<=j){ // i should be less then j
+            if(str.charAt(i)!=str.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+}
+```
     
 
 
