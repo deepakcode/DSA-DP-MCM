@@ -33,6 +33,13 @@
         </p>
 
  -  Step 4 : Calculate tempAns
+
+```java
+ int tempAns =  solve(arr, i, k)
+                   + solve(arr, k+1, j)
+                    + arr[i-1] * arr[k] * arr[j];
+
+```
  
  -  Step 5 : Calculate ans
 
