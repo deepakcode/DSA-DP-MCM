@@ -69,7 +69,7 @@ the most efficient way is (A*(B*C))*D.
 The number of operations are -
 20*30*10 + 40*20*10 + 40*10*30 = 26000.
 
-#### P01 Matrics multiplication - Recursive Solution [Gives TLE error]
+#### Recursive Solution - P01 Matrics multiplication [Gives TLE error]
 
 ```java
 class Solution{
@@ -102,10 +102,45 @@ class Solution{
 }
 ```
 
+#### Memoization Solution - P01 Matrics multiplication [Passes all test cases on GFG]
 
+<img width="710" alt="Screenshot 2022-08-10 at 2 16 22 PM" src="https://user-images.githubusercontent.com/13814143/183859244-e9ed7c97-89df-4536-80d1-f0f1b55ec07e.png">
 
-
-
+```java
+class Solution{
+    
+    static int[][] dp;
+    
+    static int matrixMultiplication(int N, int arr[])
+    {
+        dp = new int[N+1][N+1];
+        for(int[] a: dp){
+            Arrays.fill(a,-1);
+        }
+        
+        return solve(arr,1,N-1);
+    }
+    
+    static int solve(int[] arr, int i, int j){
+         int ans = Integer.MAX_VALUE;
+         if(dp[i][j] != -1)
+            return dp[i][j];
+         
+         if(i>=j)
+            return 0;
+        
+         for(int k=i; k<j; k++){
+             
+            int tempAns =  solve(arr, i, k) // this can be further optimized
+                            +solve(arr,k+1, j) // this can be further optimized
+                            +arr[i-1]*arr[k]*arr[j];
+                            
+            ans =Math.min(tempAns,ans);
+        }
+        return dp[i][j]=ans;
+    }
+}
+```
 
 ## 1. Kanpsack problem
   ### 1.1 0/1 Knapsack (6)
