@@ -10,12 +10,22 @@
 
 
  -  Step 1 : Find i and j
+          
+            i - value is left side valid value of given array, and j - value is right side valid.
+            k - value should lie between i and j
  
  -  Step 2 : Find Base Condition
    
             Thinking of smallest valid input
             or 
             Think of Invalid input
+            
+            like - i==j or i>j - when i value becomes equal to j then it is invalid, i value for MCM should be less then j
+            
+```java
+           if(i>=j)
+            return 0;
+ ```
             
  -  Step 3 : Find k loop 
          <p>
