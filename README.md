@@ -6,16 +6,25 @@
 #### General format -
 
 
-<p>
-<img width="400" alt="Screenshot 2022-08-10 at 11 59 13 AM" src="https://user-images.githubusercontent.com/13814143/183841346-4ba9c2c7-0a52-4aaa-8e1b-b4228440ec18.png">
-</p>
 
 
- *  step 1 : Find i and j
- *  step 2 : Find Base Condition
- *  step 3 : Find k loop 
- *  step 4 : Calculate tempAns
- *  step 5 : Calculate ans
+
+ -  Step 1 : Find i and j
+ 
+ -  Step 2 : Find Base Condition
+   
+            Thinking of smallest valid input
+            or 
+            Think of Invalid input
+            
+ -  Step 3 : Find k loop 
+         <p>
+        <img width="400" alt="Screenshot 2022-08-10 at 11 59 13 AM" src="https://user-images.githubusercontent.com/13814143/183841346-4ba9c2c7-0a52-4aaa-8e1b-b4228440ec18.png">
+        </p>
+
+ -  Step 4 : Calculate tempAns
+ 
+ -  Step 5 : Calculate ans
 
 
 <p>
@@ -23,7 +32,7 @@
 </p>
 
 
-#### 1.1 MCM 
+### P01 Matrics multiplication - MCM  
 
 https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1
 
@@ -43,6 +52,7 @@ the most efficient way is (A*(B*C))*D.
 The number of operations are -
 20*30*10 + 40*20*10 + 40*10*30 = 26000.
 
+#### P01 Matrics multiplication - Recursive Solution [Gives TLE error]
 
 ```java
 class Solution{
