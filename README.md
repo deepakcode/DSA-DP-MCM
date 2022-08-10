@@ -379,6 +379,114 @@ class Solution{
 }
 ```
 
+#### Memoization Solution - P03 
+
+```java
+class Solution {
+
+    static int[][][] dp;
+
+    static int countWays(int N, String S) {
+    
+        dp = new int[N + 1][N + 1][2];
+       
+        for (int row[][] : dp)
+            for (int col[] : row)
+                Arrays.fill(col, -1);
+                
+        return solve(S, 0, N - 1, 1, dp);
+    }
+
+    static int solve(String exp, int i, int j, int isTrue, int[][][] dp) {
+
+        if (i > j)
+            return 0;
+        
+        if (i == j) {
+            if (isTrue == 1) {
+                return (exp.charAt(i) == 'T') ? 1 : 0;
+            } else {
+                return (exp.charAt(i) == 'F') ? 1 : 0;
+            }
+        }
+
+        if (dp[i][j][isTrue] != -1)
+            return dp[i][j][isTrue];
+        
+        int tempAns = 0;
+
+        for (int k = i + 1; k <= j - 1; k = k + 2) { // Remember k = i+1; and k<=j-1
+            int leftT = -1;
+            if (dp[i][k - 1][1] != -1) {
+                leftT = dp[i][k - 1][1];
+            } else {
+                leftT = dp[i][k - 1][1] = solve(exp, i, k - 1, 1, dp);
+            }
+
+            int leftF = -1;
+            if (dp[i][k - 1][0] != -1) {
+                leftF = dp[i][k - 1][0];
+            } else {
+                leftF = dp[i][k - 1][0] = solve(exp, i, k - 1, 0, dp);
+            }
+
+            int rightT = -1;
+            if (dp[k + 1][j][1] != -1) {
+                rightT = dp[k + 1][j][1];
+            } else {
+                rightT = dp[k + 1][j][1] = solve(exp, k + 1, j, 1, dp);
+            }
+
+            int rightF = -1;
+            if (dp[k + 1][j][0] != -1) {
+                rightF = dp[k + 1][j][0];
+            } else {
+                rightF = dp[k + 1][j][0] = solve(exp, k + 1, j, 0, dp);
+            }
+
+            if (exp.charAt(k) == '&') {
+                if (isTrue == 1) {
+                    tempAns = tempAns + leftT * rightT;
+                    tempAns = tempAns % 1003; // asked in question 
+                } else {
+                    tempAns = tempAns + leftT * rightF
+                            + leftF * rightF
+                            + leftF * rightT;
+
+                    tempAns = tempAns % 1003; // asked in question 
+                }
+
+            } else if (exp.charAt(k) == '|') {
+                if (isTrue == 1) {
+                    tempAns = tempAns + leftT * rightT
+                            + leftT * rightF
+                            + leftF * rightT;
+
+                    tempAns = tempAns % 1003; // asked in question 
+                } else {
+                    tempAns = tempAns + leftF * rightF;
+                    tempAns = tempAns % 1003; // asked in question 
+                }
+            }
+            if (exp.charAt(k) == '^') {
+                if (isTrue == 1) {
+                    tempAns = tempAns
+                            + leftT * rightF
+                            + leftF * rightT;
+                    tempAns = tempAns % 1003; // asked in question 
+                } else {
+                    tempAns = tempAns + leftF * rightF
+                            + leftT * rightT;
+                    tempAns = tempAns % 1003; // asked in question 
+                }
+            }
+            dp[i][j][isTrue] = tempAns;
+        }
+        return tempAns;
+    }
+}
+```
+
 
 ## 1. Kanpsack problem
   ### 1.1 0/1 Knapsack (6)
