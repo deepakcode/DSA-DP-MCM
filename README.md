@@ -96,12 +96,11 @@ class Solution{
         }
         
         return ans;
-    }<img width="1184" alt="Screenshot 2022-08-10 at 12 17 18 PM" src="https://user-images.githubusercontent.com/13814143/183833733-7c541225-ddda-47f0-85c3-5b215753190b.png">
+    }
 
 
 }
 ```
-
 #### Memoization Solution - P01 Matrics multiplication [Passes all test cases on GFG]
 
 <img width="710" alt="Screenshot 2022-08-10 at 2 16 22 PM" src="https://user-images.githubusercontent.com/13814143/183859244-e9ed7c97-89df-4536-80d1-f0f1b55ec07e.png">
