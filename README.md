@@ -142,6 +142,7 @@ class Solution{
 ```
 
 ### P02 Palindromic Partitioning - MCM  
+
 Find minimum number of partition required to make string a Palindromic
 
 Example :
@@ -157,6 +158,10 @@ Example :
 https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1
 
 #### Recursive Solution - P02
+
+        1. is string alreay palindrome
+        2. if string alreay palindrome return 0
+        3. for each palindrome partition - add +1
 
 ```java
 class Solution{
@@ -210,6 +215,17 @@ class Solution{
 #### Memoization Solution - P02
 
 <img width="729" alt="Screenshot 2022-08-10 at 5 00 15 PM" src="https://user-images.githubusercontent.com/13814143/183891088-d1e0380b-df1b-4bea-8ea9-cddaf35a2959.png">
+
+
+### P03 Boolean Parenthesization Problem - MCM  
+
+https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
+
+#### Recursive Solution - P03
+
+```java
+write code here...
+```
 
 
 ## 1. Kanpsack problem
