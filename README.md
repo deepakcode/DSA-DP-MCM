@@ -235,6 +235,9 @@ https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
 
 #### Recursive Solution - P03
 
+<img width="285" alt="Screenshot 2022-08-11 at 12 48 47 AM" src="https://user-images.githubusercontent.com/13814143/184004768-2e1e3ccb-0d24-4691-ba3f-4626b397cca8.png">
+
+
 ```java
 write code here...
 ```
