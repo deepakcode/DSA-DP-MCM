@@ -238,7 +238,7 @@ https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
 <img width="285" alt="184004768-2e1e3ccb-0d24-4691-ba3f-4626b397cca8" src="https://user-images.githubusercontent.com/13814143/184016684-477867bd-092b-4463-9224-fe2d99398d2b.png">
 
 
-- From above it isclear that 'K' will start from 'i+1' and ends at 'j-1'
+- From above it is clear that 'K' will start from 'i+1' and ends at 'j-1'
 
 - 'i' and 'j' will never be at k, because K will always be at 'Operator' and i and j at 'Symbols'
 
