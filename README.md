@@ -487,6 +487,9 @@ class Solution {
 }
 ```
 
+### P04 Scrambled String
+
+
 
 ## 1. Kanpsack problem
   ### 1.1 0/1 Knapsack (6)
