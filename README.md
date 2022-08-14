@@ -489,7 +489,32 @@ class Solution {
 
 ### P04 Scrambled String
 
+```java
+ public static boolean isScramble(String s1, String s2)
+    {
+        if (s1.equals(s2))
+        {
+            return true;
+        }
 
+       int n = s1.length();   
+       boolean flag = false;
+       for (int i = 1; i < n; i++) 
+        {
+            if (isScramble(s1.substring(0, i), s2.substring(0, i)) 
+            && isScramble(s1.substring(i,n), s2.substring(i,n))) 
+            {
+                return true;
+            }
+            if (isScramble(s1.substring(0, i), s2.substring(n - i,n))
+            && isScramble(s2.substring(0, n-i), s1.substring(i,n))) 
+            {
+                return true;
+            }
+        }
+        return flag;
+    }
+```
 
 ## 1. Kanpsack problem
   ### 1.1 0/1 Knapsack (6)
