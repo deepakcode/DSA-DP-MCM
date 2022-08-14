@@ -490,7 +490,8 @@ class Solution {
 
 ### P04 Scrambled String
 
-<img width="1315" alt="Screenshot 2022-08-14 at 11 25 34 AM" src="https://user-images.githubusercontent.com/13814143/184524474-83941585-2a5d-495f-818e-5881c36860a0.png">
+<img width="1315" alt="Screenshot 2022-08-14 at 11 25 34 AM" src="https://user-images.githubusercontent.com/13814143/184524989-fbaf1c5a-79cb-48ea-ab01-899f4d972e5d.png">
+
 
 
 ```java
