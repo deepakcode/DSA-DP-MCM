@@ -487,7 +487,11 @@ class Solution {
 }
 ```
 
+
 ### P04 Scrambled String
+
+<img width="1315" alt="Screenshot 2022-08-14 at 11 25 34 AM" src="https://user-images.githubusercontent.com/13814143/184524474-83941585-2a5d-495f-818e-5881c36860a0.png">
+
 
 ```java
  public static boolean isScramble(String s1, String s2)
